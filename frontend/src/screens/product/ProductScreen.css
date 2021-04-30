@@ -1,0 +1,66 @@
+.ProductScreen-Jumbotron {
+    background-image: url('../../img/daniel-guerra-eNlh28yGvvI-unsplash.jpg');
+    /* height: 500px; */
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    /* background-size: 100% 600px; */
+    background-position: 50% 35%;
+    
+    
+}
+.ProductScreen-Jumbotron-Image-Overlay {
+    overflow: hidden;
+    /* background-color: rgba(7, 65, 63, 0.9);
+    background-color: rgba(135, 0, 55, 0.4); */
+    
+    object-fit: cover;
+}
+
+.ProductScreen-Jumbotron-Text {
+    /* padding: 150px ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+.ProductScreen-Jumbotron h1 {
+    color: #fff;
+    font-size: 5em;
+    font-weight: 100;
+    /* backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    border-radius: 5px;
+    padding: 5px 10px; */
+}
+
+
+.ProductScreen-Jumbotron p {
+    color: #fff;
+    font-size: 2em;
+    
+}
+
+.ProductScreen-Wrapper {
+    width: 100%;
+    max-width: 70%;
+    margin: 40px auto;
+}
+
+.ProductScreen-Spinner {
+    max-width: 100%;
+    margin-left: 50%;
+    margin-top: 250px;
+    font-size: 1000;
+    width: 100px;
+    height: 100px;
+}
+
+.ProductScreen-Spinner .ant-spin-lg .ant-spin-dot i {
+    width: 140px;
+    height: 140px;
+}

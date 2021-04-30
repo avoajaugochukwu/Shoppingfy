@@ -1,0 +1,124 @@
+.AddressWrapper-Wrapper {
+    border: 1px solid rgb(213, 212, 212);
+    margin-bottom: 30px;
+    padding: 10px;
+    
+}
+.AddressWrapper-Header {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.AddressWrapper-Body {
+    padding-top: 10px;
+}
+.AddressList-Current {
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.AddressOthers-Wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 10px;
+}
+.AddressOthers-Current-Button {
+    display: none;
+}
+.AddressOthers-Wrapper:hover .AddressOthers-Current-Button {
+    /* background-color: beige; */
+    display: inline-block;
+}
+
+.CheckOutScreen-Product-Wrapper {
+    
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    border: 1px solid #f6f6f6;
+    border-top: 1px solid rgb(213, 212, 212);
+    border-left: 1px solid rgb(213, 212, 212);
+    border-right: 1px solid rgb(213, 212, 212);
+
+
+    /* width: 100%; */
+    /* max-width: 90%; */
+    /* margin: 0px auto; */
+
+    padding: 10px
+}
+
+
+.CheckOutScreen-Product-Box2 {
+    flex: 3;
+    padding: 5px;
+    padding-left: 10px;
+}
+.CheckOutScreen-Product-Box2 h4 {
+    font-weight: 400 !important;
+}
+
+.CheckOutScreen-Product-Box3 {
+    padding: 5px;
+}
+
+.CheckOutScreen-Summary-Wrapper {
+    /* background-color: beige;  */
+    padding: 20px;
+    border: 1px solid rgb(213, 212, 212);
+}
+
+.CheckOutScreen-Summary-Amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: larger;
+    
+}
+
+.CheckOutScreen-Summary-Amount p {
+    height: 1em;
+}
+
+.CheckOutScreen-Address-Form {
+    display: flex;
+    flex-direction: column;
+}
+
+.CheckOutScreen-Address-Form-Wrapper .ant-form-item {
+    margin-bottom: 10px;
+}
+
+.CheckOutScreen-Address-Form > .ant-form-item-label {
+    margin-left: 0px;
+    text-align: left;
+    
+    /* justify-content: left !important;
+    align-content: flex-start !important; */
+}
+
+.CheckOutScreen-Address-Form > .ant-form-item-label > label {
+    font-size: 80%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .CheckOutScreen-Wrapper {
+        width: 100%;
+        max-width: 98%;
+        margin: 0 auto;
+    }
+    .CheckOutScreen-Product-Wrapper {
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+  }

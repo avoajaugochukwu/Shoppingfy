@@ -1,0 +1,47 @@
+.ui.fluid.card>.image>img {
+    height: 350px;
+}
+
+.Product-details-breadcrumb {
+    border-top: 1px #ccc dashed;
+    border-bottom: 1px #ccc dotted;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.ProductCard-Card {
+    margin-top: 20px;
+}
+
+.ProductDetailsScreen-Spinner {
+    max-width: 100%;
+    margin-left: 50%;
+    margin-top: 250px;
+    font-size: 1000;
+    width: 100px;
+    height: 100px;
+}
+
+.ProductDetailsScreen-Spinner .ant-spin-lg .ant-spin-dot i {
+    width: 140px;
+    height: 140px;
+}
+
+.ProductDetailsScreen-Zoom-OnHover {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 540px;
+}
+
+.ProductDetailsScreen-Zoom-OnHover img { 
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+.ProductDetailsScreen-Zoom-OnHover:hover img {
+    transform: scale(1.5);
+}

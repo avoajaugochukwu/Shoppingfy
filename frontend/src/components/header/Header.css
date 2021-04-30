@@ -1,0 +1,148 @@
+.show-on-mobile {
+	display: none;
+}
+
+
+/* Nav Bar CSS */
+
+.navbar {
+	height: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar-logo {
+	justify-self: start;
+	margin-left: 50px;
+	text-decoration: none;
+	font-size: 2rem;
+	flex: 1;
+}
+
+.navbar-logo img {
+	max-width: 60%;
+}
+
+.nav-menu {
+	flex: 5;
+	flex-direction: column;
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	text-align: center;
+}
+
+.nav-shopping {
+	display: flex;
+	flex: 1;
+}
+
+.nav-item {
+	display: flex;
+	align-items: center;
+}
+
+.nav-links {
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	color: #050931;
+}
+
+.nav-links:hover {
+	color: #080e52;
+	border-bottom: 1px #080e52 solid;
+	transition: 0.1s;
+}
+
+.nav-links-mobile {
+	display: none;
+}
+
+.menu-icon {
+	display: none;
+}
+
+@media screen and (max-width: 960px) {
+	.hide-on-mobile {
+		display: none;
+	}
+	.show-on-mobile {
+		display: block;
+	}
+	.NavbarItems {
+		position: relative;
+	}
+	.nav-menu {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 60px;
+		left: -100%;
+		opacity: 1;
+		transition: all 0.5s ease;
+	}
+	.nav-menu.active {
+		background: #fff;
+		padding-top: 30px;
+		left: 0;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: 10000;
+	}
+	.nav-links {
+		text-align: left;
+		padding: 1rem;
+		width: 100%;
+		display: table;
+	}
+	.nav-links:hover {
+		border: none;
+	}
+	.navbar-logo {
+		margin-left: 10px;
+	}
+	.navbar-logo img {
+		max-width: 25%;
+	}
+	.menu-icon {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(-100%, 60%);
+		font-size: 1.8rem;
+		cursor: pointer;
+	}
+	.nav-links-mobile {
+		display: block;
+	}
+	.nav-links-mobile:hover {
+		/* background: #fff; */
+		color: #1888ff;
+		transition: 250ms;
+	}
+	.show-on-mobile-nav-shopping {
+        display: flex;
+        flex-direction: row;
+        padding-left: 12px;
+		text-align: left;
+		margin-top: 20px;
+        /* justify-content: flex-start; */
+        /* flex-wrap: nowrap; */
+        /* border: 1px solid black; */
+	}
+    .show-on-mobile-nav-shopping a {
+        padding-right: 20px;
+        color: black;
+    }
+	button {
+		display: none;
+	}
+}
+
+
+/* Nav Bar CSS */

@@ -1,0 +1,66 @@
+.Footer-Main {
+    border-top: 1px rgb(237, 235, 235) solid;
+    
+    padding-top: 30px;
+    /* height: 300px; */
+    width: 100%;
+    /* background-color: rgba(7, 65, 63, 0.9); */
+}
+
+/* .Footer-Col-4-Wrapper {
+    
+    
+} */
+
+.Footer-Col-4-Wrapper-Inner {
+    padding: 10px;
+    /* background-color: rgba(7, 65, 63, 0.9); */
+    /* height: 300px; */
+    width: 100%;
+}
+
+/* .Footer-Logo-Wrapper {
+    
+} */
+
+.Footer-Logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.Footer-Contact-Details {
+    margin-top: 30px;
+}
+.Footer-Contact-Details p {
+    margin-bottom: 0px;
+}
+
+.FooterMenu-Date {
+    margin-left: 200px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.FooterMenu-Main {
+    border-top: 1px rgb(237, 235, 235) solid;
+}
+.FooterMenu-Right {
+    display: flex;
+    justify-content: flex-end;
+}
+.FooterMenu-Right p {
+    margin-right: 30px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+@media screen and (max-width: 960px) {
+    .FooterMenu-Date {
+        margin-left: 35px;
+    }
+}

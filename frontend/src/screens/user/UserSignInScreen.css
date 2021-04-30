@@ -1,0 +1,10 @@
+.UserSignInScreen-Wrapper {
+    margin: 50px auto 30px auto;
+    border: 1px solid #ccc;
+    padding: 30px;
+}
+.UserSignInScreen-Wrapper h1 {
+    text-align: center;
+    margin: 10px auto 20px auto;
+    font-weight: 100;
+}
