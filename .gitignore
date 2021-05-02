@@ -1,3 +1,4 @@
 env/
 .env
 django_secrets.py
+data/

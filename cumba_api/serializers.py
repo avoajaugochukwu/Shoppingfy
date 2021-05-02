@@ -1,7 +1,7 @@
 from rest_framework import serializers
 # from rest_flex_fields import FlexFieldsModelSerializer
 from .models import Category, Product, Cart, Order, Image, User, Address
-from versatileimagefield.serializers import VersatileImageFieldSerializer
+# from versatileimagefield.serializers import VersatileImageFieldSerializer
 
 from dj_rest_auth.models import TokenModel
 
@@ -34,7 +34,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class ImageSerializer(serializers.ModelSerializer):
-    image = VersatileImageFieldSerializer(sizes=[('full_size', 'url'), ('thumbnail', 'thumbnail__100x100'), ('product_image', 'thumbnail__350x350')])
+    # image = VersatileImageFieldSerializer(sizes=[('full_size', 'url'), ('thumbnail', 'thumbnail__100x100'), ('product_image', 'thumbnail__350x350')])
+
 
     class Meta:
         model = Image

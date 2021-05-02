@@ -28,7 +28,7 @@ DEBUG = True
 DEV_ENV = os.getenv('DEV_ENV')
 
 if int(DEV_ENV) == 1:
-    ALLOWED_HOSTS = ['localhost']
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
     CORS_ORIGIN_WHITELIST = (
         'http://localhost:3000',
         'http://127.0.0.1:8000',

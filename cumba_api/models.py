@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from versatileimagefield.fields import VersatileImageField, PPOIField
+# from versatileimagefield.fields import VersatileImageField, PPOIField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.template.defaultfilters import slugify
@@ -53,8 +53,9 @@ class Category(models.Model):
 
 class Image(models.Model):
     name = models.CharField(max_length=255)
-    image = VersatileImageField('image', upload_to='product/images/', ppoi_field='image_ppoi')
-    image_ppoi = PPOIField()
+    # image = VersatileImageField('image', upload_to='product/images/', ppoi_field='image_ppoi')
+    # image_ppoi = PPOIField()
+    image = models.ImageField(upload_to='product/images/')
 
     def __str__(self):
         return self.name
