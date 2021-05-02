@@ -1,7 +1,5 @@
 from rest_framework import serializers
-# from rest_flex_fields import FlexFieldsModelSerializer
 from .models import Category, Product, Cart, Order, Image, User, Address
-# from versatileimagefield.serializers import VersatileImageFieldSerializer
 
 from dj_rest_auth.models import TokenModel
 
