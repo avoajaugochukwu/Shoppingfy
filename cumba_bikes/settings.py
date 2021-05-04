@@ -39,6 +39,9 @@ if int(DEV_ENV) == 1:
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
+
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    # print(STATIC_ROOT)
     # print(DEV_ENV)
     # print('-------------- DEVELOPMENT ENVIRONMENT ----------')
 else:
@@ -47,7 +50,7 @@ else:
         'https://shopping-app-frontend.herokuapp.com',
         'https://shopping-app-backend-api.herokuapp.com',
     )
-    COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
+    # COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
