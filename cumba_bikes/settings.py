@@ -53,7 +53,7 @@ else:
     # COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'cumba_api/static')
     DEBUG_PROPAGATE_EXCEPTIONS = True
     
     # print(DEV_ENV)
