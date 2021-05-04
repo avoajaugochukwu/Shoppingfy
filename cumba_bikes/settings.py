@@ -27,7 +27,13 @@ DEBUG = False
 
 DEV_ENV = os.getenv('DEV_ENV')
 
+STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if int(DEV_ENV) == 1:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
@@ -36,11 +42,7 @@ if int(DEV_ENV) == 1:
         'http://127.0.0.1:8000',
     )
     
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-
-    # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    
     # print(STATIC_ROOT)
     # print(DEV_ENV)
     # print('-------------- DEVELOPMENT ENVIRONMENT ----------')
@@ -53,7 +55,10 @@ else:
     # COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
-    STATIC_ROOT = os.path.join(BASE_DIR, 'cumba_api/static')
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # STATICFILES_DIRS = (
+    #     os.path.join(BASE_DIR, 'static'),
+    # )
     DEBUG_PROPAGATE_EXCEPTIONS = True
     
     # print(DEV_ENV)
@@ -194,7 +199,7 @@ AUTH_USER_MODEL = 'cumba_api.User'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 
 SITE_ID = 1
@@ -202,8 +207,8 @@ SITE_ID = 1
 
 
 #  Add configuration for static files storage using whitenoise
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Start of Settings to use email instead of username for login
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
