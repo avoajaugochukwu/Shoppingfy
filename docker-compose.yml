@@ -2,19 +2,55 @@ version: "3.9"
 
 services:
   db:
+    restart: always
     image: postgres
+    container_name: cumba_bikes-postgres #you can change this
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data/
+    # volumes:
+    #   - ./data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=cumba_bikes
       - POSTGRES_USER=avoaja
       - POSTGRES_PASSWORD=boys2men
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8585
+      - POSTGRES_PORT=5432
+    ports:
+      - "5432:5432"
+  
+  
+  api:
+    container_name: cumba_bikes-django
+    build:
+      context: .
+      dockerfile: django.Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    # command: gunicorn wsgi.application --bind 0.0.0.0:0000
     volumes:
       - .:/code
     ports:
-      - "8585:8585"
+      - "8000:8000"
+    environment:
+      - CUMBA_BIKES_DATABASE_NAME=cumba_bikes
+      - CUMBA_BIKES_DATABASE_USER_NAME=avoaja
+      - CUMBA_BIKES_DATABASE_PASSWORD=boys2men
+      - CUMBA_BIKES_DATABASE_HOST=db
     depends_on:
       - db
+    
+    
+  web:
+    container_name: cumba_bikes-react
+    build:
+      context: .
+      dockerfile: frontend/react.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - '.:/frontend'
+      - '/frontend/node_modules'
+    environment:
+      - DEV_BASE_URL=$MACHINE_HOST:8000/api/v1/
+    depends_on:
+      - api
+volumes:
+  postgres_data:

@@ -7,7 +7,7 @@ from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
 import uuid
-import versatileimagefield.fields
+# import versatileimagefield.fields
 
 
 class Migration(migrations.Migration):
@@ -63,8 +63,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
-                ('image', versatileimagefield.fields.VersatileImageField(upload_to='product/images/', verbose_name='image')),
-                ('image_ppoi', versatileimagefield.fields.PPOIField(default='0.5x0.5', editable=False, max_length=20)),
+                # ('image', versatileimagefield.fields.VersatileImageField(upload_to='product/images/', verbose_name='image')),
+                # ('image_ppoi', versatileimagefield.fields.PPOIField(default='0.5x0.5', editable=False, max_length=20)),
             ],
         ),
         migrations.CreateModel(

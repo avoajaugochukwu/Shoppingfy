@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     # 3rd Party
     'rest_framework',
     'corsheaders',
-    'versatileimagefield',  # For images
+    # 'versatileimagefield',  # For images
 
     # Auth
     'rest_framework.authtoken',  # For Token Authentication
@@ -122,13 +122,21 @@ SECRET_KEY = os.getenv('CUMBA_BIKES_SECRET_KEY', 'Optional default value')
 CUMBA_BIKES_DATABASE_NAME = os.getenv('CUMBA_BIKES_DATABASE_NAME', 'Optional default value')
 CUMBA_BIKES_DATABASE_USER_NAME = os.getenv('CUMBA_BIKES_DATABASE_USER_NAME', 'Optional default value')
 CUMBA_BIKES_DATABASE_PASSWORD = os.getenv('CUMBA_BIKES_DATABASE_PASSWORD', 'Optional default value')
+CUMBA_BIKES_DATABASE_HOST = os.getenv('CUMBA_BIKES_DATABASE_HOST', 'Optional default value')
 
+print(CUMBA_BIKES_DATABASE_NAME)
+print(CUMBA_BIKES_DATABASE_PASSWORD)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': CUMBA_BIKES_DATABASE_NAME,
         'USER': CUMBA_BIKES_DATABASE_USER_NAME,
-        'PASSWORD': CUMBA_BIKES_DATABASE_PASSWORD
+        'PASSWORD': CUMBA_BIKES_DATABASE_PASSWORD,
+        # 'NAME': 'cumba_bikes',
+        # 'USER': 'avoaja',
+        # 'PASSWORD': 'boys2men',
+        # 'HOST': CUMBA_BIKES_DATABASE_HOST,
+        # 'PORT': '5432'
     }
 }
 
