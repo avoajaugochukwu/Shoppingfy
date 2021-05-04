@@ -46,6 +46,7 @@ else:
     )
     COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
     STATIC_ROOT = os.path.join(BASE_DIR, 'cumba_api/static')
+    DEBUG_PROPAGATE_EXCEPTIONS = True
     # print(DEV_ENV)
     # print('-------------- PRODDUCTION ENVIRONMENT ----------')
 
