@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 DEV_ENV = os.getenv('DEV_ENV')
 
@@ -191,7 +191,8 @@ STATICFILES_DIRS = (
 )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Start of Settings to use email instead of username for login
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
