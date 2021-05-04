@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 DEV_ENV = os.getenv('DEV_ENV')
 
@@ -59,6 +59,7 @@ else:
     # STATICFILES_DIRS = (
     #     os.path.join(BASE_DIR, 'static'),
     # )
+    
     DEBUG_PROPAGATE_EXCEPTIONS = True
     
     # print(DEV_ENV)
