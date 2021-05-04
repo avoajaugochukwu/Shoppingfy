@@ -70,7 +70,7 @@ class Product(models.Model):
     is_discontinued = models.BooleanField(default=False)
     category = models.ForeignKey(to=Category, on_delete=models.CASCADE, related_name='product_category')
     seller = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name='product_seller')
-    slug = models.SlugField(max_length = 250, null = False, blank = False, unique=True)
+    slug = models.SlugField(max_length=250, unique=True)
 
     def __str__(self):
         return self.name

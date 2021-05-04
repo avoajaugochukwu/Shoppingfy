@@ -124,8 +124,6 @@ CUMBA_BIKES_DATABASE_USER_NAME = os.getenv('CUMBA_BIKES_DATABASE_USER_NAME', 'Op
 CUMBA_BIKES_DATABASE_PASSWORD = os.getenv('CUMBA_BIKES_DATABASE_PASSWORD', 'Optional default value')
 CUMBA_BIKES_DATABASE_HOST = os.getenv('CUMBA_BIKES_DATABASE_HOST', 'Optional default value')
 
-print(CUMBA_BIKES_DATABASE_NAME)
-print(CUMBA_BIKES_DATABASE_PASSWORD)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

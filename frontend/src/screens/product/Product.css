@@ -13,6 +13,17 @@
     margin-top: 20px;
 }
 
+.ProductCard-Card .ui.card>.image {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fff;
+}
+.ProductCard-Card .ui.card>.image img {
+    margin: auto;
+    width: 80%;
+    height: 50%;
+}
+
 .ProductDetailsScreen-Spinner {
     max-width: 100%;
     margin-left: 50%;

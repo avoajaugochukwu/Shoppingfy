@@ -64,3 +64,11 @@
     width: 140px;
     height: 140px;
 }
+
+@media only screen and (max-width: 768px) {
+    .ProductScreen-Wrapper {
+        width: 100%;
+        max-width: 90%;
+        margin: 40px auto;
+    }
+}

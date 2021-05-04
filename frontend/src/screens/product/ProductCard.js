@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Card as SegmentUICard } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import { formatMoney } from '../../utils/productUtils'
 
 
 import './Product.css'
@@ -15,19 +16,28 @@ const ProductCard = (props) => {
         history.push(`product/${slug}`)
     }
 
+    console.log(formatMoney(product.price))
 
     const extra = (
-        <p>
-            {product.quantity} people like this dress
-        </p>
+        <div>
+            <p style={{ color: '#000e20'}}>
+                <b>{formatMoney(product.price)}</b>
+            </p>
+            <p>
+                {product.quantity} people are talking about this
+            </p>
+        </div>
+        
+        
     )
 
     return (
         <div className="ProductCard-Card">
+            
             <SegmentUICard
                 key={product.id}
                 onClick={() => { handleClick(product.slug) }}
-                image={product.images[0].image.product_image}
+                image={product.images[0].image}
                 // image="https://dummyimage.com/325x360/000/fff"
                 header={product.name}
                 meta={product.category.name}
