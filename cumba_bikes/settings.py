@@ -27,12 +27,15 @@ DEBUG = False
 
 DEV_ENV = os.getenv('DEV_ENV')
 
+PROJECT_ROOT   =   os.path.dirname(os.path.dirname(__file__))
+
 if int(DEV_ENV) == 1:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
     CORS_ORIGIN_WHITELIST = (
         'http://localhost:3000',
         'http://127.0.0.1:8000',
     )
+    STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'cumba_api')
     # print(DEV_ENV)
     # print('-------------- DEVELOPMENT ENVIRONMENT ----------')
 else:
@@ -41,6 +44,8 @@ else:
         'https://shopping-app-frontend.herokuapp.com',
         'https://shopping-app-backend-api.herokuapp.com',
     )
+    COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     # print(DEV_ENV)
     # print('-------------- PRODDUCTION ENVIRONMENT ----------')
 
@@ -180,8 +185,8 @@ AUTH_USER_MODEL = 'cumba_api.User'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-PROJECT_ROOT   =   os.path.dirname(os.path.dirname(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'cumba_api')
+
+
 STATIC_URL = '/static/'
 
 SITE_ID = 1
