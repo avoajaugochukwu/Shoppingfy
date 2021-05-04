@@ -45,7 +45,7 @@ else:
         'https://shopping-app-backend-api.herokuapp.com',
     )
     COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'cumba_api/static')
     # print(DEV_ENV)
     # print('-------------- PRODDUCTION ENVIRONMENT ----------')
 
