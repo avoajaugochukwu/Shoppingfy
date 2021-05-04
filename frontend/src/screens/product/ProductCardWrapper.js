@@ -31,17 +31,6 @@ const ProductCardWrapper = (props) => {
                             <ProductCard product={item} key={item.id} />
                         </Col>
                     ))}
-                    {products && products?.map(item => (
-                        <Col xs={24} sm={12} md={8} lg={8} key={item.id}>
-                            <ProductCard product={item} key={item.id} />
-                        </Col>
-                    ))}
-                    {products && products?.map(item => (
-                        <Col xs={24} sm={12} md={8} lg={8} key={item.id}>
-                            <ProductCard product={item} key={item.id} />
-                        </Col>
-                    ))}
-                    
                 </Row>
             }
             
