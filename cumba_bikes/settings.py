@@ -18,11 +18,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 DEV_ENV = os.getenv('DEV_ENV')
@@ -41,64 +36,15 @@ if int(DEV_ENV) == 1:
         'http://localhost:3000',
         'http://127.0.0.1:8000',
     )
-    
-    
-    # print(STATIC_ROOT)
-    # print(DEV_ENV)
-    # print('-------------- DEVELOPMENT ENVIRONMENT ----------')
 else:
     ALLOWED_HOSTS = ['shopping-app-backend-api.herokuapp.com']
     CORS_ORIGIN_WHITELIST = (
         'https://shopping-app-frontend.herokuapp.com',
         'https://shopping-app-backend-api.herokuapp.com',
     )
-    # COMPRESS_ENABLED = os.getenv('COMPRESS_ENABLED', False)
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     
-    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # STATICFILES_DIRS = (
-    #     os.path.join(BASE_DIR, 'static'),
-    # )
-    
     DEBUG_PROPAGATE_EXCEPTIONS = True
-    
-    # print(DEV_ENV)
-    # print('-------------- PRODDUCTION ENVIRONMENT ----------')
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'formatters': {
-            'verbose': {
-                'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                        'pathname=%(pathname)s lineno=%(lineno)s ' +
-                        'funcname=%(funcName)s %(message)s'),
-                'datefmt': '%Y-%m-%d %H:%M:%S'
-            },
-            'simple': {
-                'format': '%(levelname)s %(message)s'
-            }
-        },
-        'handlers': {
-            'null': {
-                'level': 'DEBUG',
-                'class': 'logging.NullHandler',
-            },
-            'console': {
-                'level': 'DEBUG',
-                'class': 'logging.StreamHandler',
-                'formatter': 'verbose'
-            }
-        },
-        'loggers': {
-            'testlogger': {
-                'handlers': ['console'],
-                'level': 'INFO',
-            }
-        }
-    }
-    import logging
-    logger = logging.getLogger('testlogger')
-    logger.info('This is a simple log message')
 
 
 # Application definition
@@ -186,10 +132,6 @@ DATABASES = {
         'NAME': CUMBA_BIKES_DATABASE_NAME,
         'USER': CUMBA_BIKES_DATABASE_USER_NAME,
         'PASSWORD': CUMBA_BIKES_DATABASE_PASSWORD,
-        # 'NAME': 'cumba_bikes',
-        # 'USER': 'avoaja',
-        # 'PASSWORD': 'boys2men',
-        # 'HOST': CUMBA_BIKES_DATABASE_HOST,
         # 'PORT': '5432'
     }
 }
@@ -236,10 +178,7 @@ AUTH_USER_MODEL = 'cumba_api.User'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-
-
 SITE_ID = 1
-
 
 
 #  Add configuration for static files storage using whitenoise
@@ -282,7 +221,6 @@ REST_FRAMEWORK = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    
     'TOKEN_SERIALIZER': 'cumba_api.serializers.TokenSerializer',
 }
 
