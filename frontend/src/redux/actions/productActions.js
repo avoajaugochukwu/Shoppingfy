@@ -12,7 +12,6 @@ export const fetchAllProducts = async (dispatch) => {
     })
 
     const url = baseUrl + 'products/'
-    console.log(url)
 
     axios
         .get(url)

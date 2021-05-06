@@ -49,7 +49,7 @@ const Footer = () => {
                         <p>Bode Thomas
                     <br />Surulere, Lagos</p>
                         <h3>Hours</h3>
-                        <p>Monday–Saturday: 9:00AM–5:00PM</p>
+                        <p>Monday – Saturday: 9:00AM – 5:00PM</p>
                     </div>
                 </Col>
                 <Col xs={24} sm={12} md={8} lg={6} className="Footer-Col-4-Wrapper">

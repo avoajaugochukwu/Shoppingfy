@@ -14,8 +14,8 @@
 }
 .ProductScreen-Jumbotron-Image-Overlay {
     overflow: hidden;
-    /* background-color: rgba(7, 65, 63, 0.9);
-    background-color: rgba(135, 0, 55, 0.4); */
+    background-color: rgba(7, 65, 63, 0.9);
+    background-color: rgba(13, 1, 65, 0.4);
     
     object-fit: cover;
 }

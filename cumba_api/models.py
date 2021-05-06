@@ -55,6 +55,7 @@ class Image(models.Model):
     # image = VersatileImageField('image', upload_to='product/images/', ppoi_field='image_ppoi')
     # image_ppoi = PPOIField()
     image = models.ImageField(upload_to='product/images/')
+    image_url = models.URLField()
 
     def __str__(self):
         return self.name

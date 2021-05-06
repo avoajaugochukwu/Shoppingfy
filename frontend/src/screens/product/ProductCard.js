@@ -16,8 +16,6 @@ const ProductCard = (props) => {
         history.push(`product/${slug}`)
     }
 
-    console.log(formatMoney(product.price))
-
     const extra = (
         <div>
             <p style={{ color: '#000e20'}}>
@@ -37,7 +35,7 @@ const ProductCard = (props) => {
             <SegmentUICard
                 key={product.id}
                 onClick={() => { handleClick(product.slug) }}
-                image={product.images[0].image}
+                image={product.images[0].image_url}
                 // image="https://dummyimage.com/325x360/000/fff"
                 header={product.name}
                 meta={product.category.name}

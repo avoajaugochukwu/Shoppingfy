@@ -15,6 +15,8 @@ import Footer from '../../components/footer/Footer'
 
 import './ProductScreen.css'
 
+import Helmet from 'react-helmet'
+
 const ProductScreen = () => {
 
     // const { history } = props
@@ -33,9 +35,14 @@ const ProductScreen = () => {
 
     const product = useSelector((state) => state.product)
     const { products } = product
-    if (dbError) {
-        return <Redirect to='/500' />
-    }
+
+    setTimeout(() => {
+        if (dbError) {
+
+            return <Redirect to='/500' />
+        }    
+    }, 3000)
+    
 
     // If products array is still empty after 10 seconds, move to maintenance page
     // console.log(products?.length)
@@ -50,11 +57,14 @@ const ProductScreen = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Cumba Bikes</title>
+            </Helmet>
             <div className="ProductScreen-Jumbotron">
                 <div className="ProductScreen-Jumbotron-Image-Overlay">
                     <div className="ProductScreen-Jumbotron-Text">
-                        <h1>Quality Bycicles</h1>
-                        <p>The biggest home for bikes and accessories in Nigeria</p>
+                        <h1>Train, Cycle, Recover - Repeat</h1>
+                        <p>Home of quality bicycles and accessories</p>
                     </div>
                 </div>
 

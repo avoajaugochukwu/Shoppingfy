@@ -10,11 +10,11 @@ import { Carousel } from 'react-responsive-carousel';
 import { Row, Col, Breadcrumb, Tag, Button, Typography, notification, Spin } from 'antd'
 import { CheckCircleOutlined, TagsOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 
-import { getTwoDecimalOfPrice, getAfterPayPrice } from '../../utils/productUtils'
+import { getTwoDecimalOfPrice, getAfterPayPrice, formatMoney } from '../../utils/productUtils'
 import { fetchProduct } from '../../redux/actions/productActions'
 
 import { addToCart, cartClearError } from '../../redux/actions/cartActions'
-
+import Helmet from 'react-helmet'
 
 const ProductDetailsScreen = (props) => {
     const { match: { params: { slug } } } = props
@@ -71,7 +71,6 @@ const ProductDetailsScreen = (props) => {
         history.push(`/cart/`)
     }
 
-
     return (
         <div>
             {
@@ -81,6 +80,9 @@ const ProductDetailsScreen = (props) => {
                     </div>
                     : (product &&
                         <>
+                            <Helmet>
+                            <title>Cumba Bikes - {product && product.name}</title>
+                            </Helmet>
                             <Row justify="center" >
                                 <Col span={20} xs={24} sm={24} md={20} lg={20}>
                                     <Breadcrumb className="Product-details-breadcrumb">
@@ -108,7 +110,8 @@ const ProductDetailsScreen = (props) => {
                                     <Carousel autoPlay={true} infiniteLoop={true} showArrows={true} style={{ width: '20%' }}>
                                         { product.images && product.images.map(item => (
                                             <div className="ProductDetailsScreen-Zoom-OnHover" key={item.id}>
-                                                <img src={item && item.image.full_size} width="20%" />
+                                                <img src={item && item.image_url} width="20%" />
+                                                <p>{item && item.image.image_url}</p>
                                                 <p className="legend"></p>
                                             </div>
                                         ))}
@@ -128,10 +131,10 @@ const ProductDetailsScreen = (props) => {
                                         </Title>
                                         <p>
                                             <TagsOutlined /> &nbsp;
-                                            ${product.price && getTwoDecimalOfPrice(product.price)}
+                                            {product.price && formatMoney(getTwoDecimalOfPrice(product.price))}
                                         </p>
                                         <p>
-                                            or 4 payments of ${product.price && getAfterPayPrice(product.price)} with &nbsp;
+                                            or 4 payments of {product.price && formatMoney(getAfterPayPrice(product.price))} with &nbsp;
                                             <Tag icon={<CheckCircleOutlined />} color="success">
                                                 afterPay
                                             </Tag>
@@ -140,7 +143,7 @@ const ProductDetailsScreen = (props) => {
                                         <br />
                                         <div>
                                             <h3 style={{ textAlign: 'start' }}>
-                                                Fashion guide:
+                                                Description:
                                             </h3>
                                             <p style={{ textAlign: 'start' }}>
                                                 {product.description}
