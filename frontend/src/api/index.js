@@ -1,10 +1,8 @@
 import axios from 'axios';
+import { baseUrl } from '../redux/consts'
 
-export const baseUrl = 'http://localhost:8000/api/v1/'
-
-
-export const fetchProduct = async (productId) => {
-    const url = baseUrl + 'products/' + productId
+export const fetchProduct = async (productSlug) => {
+    const url = baseUrl + 'products/' + productSlug
 
     try {
         const product = await axios.get(url)

@@ -15,7 +15,7 @@ const FooterMenu = () => {
                 </Col>
                 <Col xs={12} sm={12} md={8} lg={15} >
                     <div className="FooterMenu-Right">
-                        <p>Terms</p>
+                        {/* <p>Terms</p> */}
                         <p>Cookie Policy</p>
                         <p>Privacy Policy</p>
                     </div>

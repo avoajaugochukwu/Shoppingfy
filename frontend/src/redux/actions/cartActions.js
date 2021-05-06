@@ -5,7 +5,7 @@ import { CART_ADD_ITEM, CART_ADD_ITEM_FAIL, CART_REMOVE_ITEM, CART_CLEAR_ERROR }
 export const addToCart = (productId) => async (dispatch, getState) => {
     const { cart: { cartItems } } = getState()
 
-    console.log(cartItems)
+    
     try {
         const product = await fetchProduct(productId)
 
@@ -18,14 +18,20 @@ export const addToCart = (productId) => async (dispatch, getState) => {
             })
             return false
         }
-
-        dispatch({
-            type: CART_ADD_ITEM,
-            payload: product
-        })
         
-        localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
+        // check product opject is legitimate product 'whether it has an "id"'
+        if (product !== undefined) {
+            if ('id' in product) {
+                dispatch({
+                    type: CART_ADD_ITEM,
+                    payload: product
+                })
+                
+                localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
+            }
+        }
 
+        return false
     } catch (error) {
         dispatch({
             type: CART_ADD_ITEM_FAIL,
@@ -33,7 +39,6 @@ export const addToCart = (productId) => async (dispatch, getState) => {
                 error.response && error.response.data.message
                     ? error.response.data.message
                     : error.message,
-
         })
         console.log(error)
     }

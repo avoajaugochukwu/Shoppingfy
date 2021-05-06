@@ -58,7 +58,7 @@ const UserSignUpScreen = (props) => {
             <Row justify="center">
                 <Col span={20} xs={24} sm={24} md={8} lg={8}
                     className="UserSignInScreen-Wrapper">
-                    <h1>Log into your account</h1>
+                    <h1>Register</h1>
                     {/* {loading && <LoadingBox></LoadingBox>} */}
 
                     <Form form={form} name="control-hooks" onFinish={onFinish} validateMessages={validateMessages}>
@@ -85,7 +85,7 @@ const UserSignUpScreen = (props) => {
                             </Button>
                         </Form.Item>
                     </Form>
-                    <p>Have and account? <b><Link to="/signin">Click to login</Link></b></p>
+                    <p>Have an account? <b><Link to="/signin">Click to login</Link></b></p>
                 </Col>
             </Row>
         </div>

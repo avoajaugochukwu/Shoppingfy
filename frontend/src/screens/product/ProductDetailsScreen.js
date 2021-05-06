@@ -70,7 +70,6 @@ const ProductDetailsScreen = (props) => {
     const handleViewCartClick = () => {
         history.push(`/cart/`)
     }
-
     return (
         <div>
             {
@@ -81,7 +80,7 @@ const ProductDetailsScreen = (props) => {
                     : (product &&
                         <>
                             <Helmet>
-                            <title>Cumba Bikes - {product && product.name}</title>
+                                <title>Cumba Bikes - {product?.name ? product?.name : ''}</title>
                             </Helmet>
                             <Row justify="center" >
                                 <Col span={20} xs={24} sm={24} md={20} lg={20}>
@@ -151,7 +150,7 @@ const ProductDetailsScreen = (props) => {
                                         </div>
                                         <Button
                                             type="primary"
-                                            onClick={() => { handleAddItemToCart(product.id) }}
+                                            onClick={() => { handleAddItemToCart(slug) }}
                                             icon={<ShoppingCartOutlined />}
                                             style={{ marginTop: "50px" }}
                                             size="large" >

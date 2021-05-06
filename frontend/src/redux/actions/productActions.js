@@ -40,12 +40,12 @@ export const fetchAllProducts = async (dispatch) => {
 }
 
 
-export const fetchProduct = (productId) => async (dispatch) => {
+export const fetchProduct = (productSlug) => async (dispatch) => {
     dispatch({
         type: PRODUCT_DETAILS_REQUEST
     })
 
-    const url = baseUrl + `products/${productId}`
+    const url = baseUrl + `products/${productSlug}`
     
     axios
         .get(url)

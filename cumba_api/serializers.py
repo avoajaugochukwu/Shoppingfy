@@ -10,7 +10,7 @@ from dj_rest_auth.models import TokenModel
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email')
+        fields = ('id', 'username', 'email', 'company_name')
 
 
 class TokenSerializer(serializers.ModelSerializer):

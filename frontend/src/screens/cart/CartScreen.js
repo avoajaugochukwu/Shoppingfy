@@ -6,11 +6,10 @@ import { Row, Col, Tag, Button, Typography, Avatar } from 'antd'
 import { CheckCircleOutlined, TagsOutlined } from '@ant-design/icons'
 
 import { removeFromCart } from '../../redux/actions/cartActions'
-import { getTwoDecimalOfPrice, getAfterPayPrice } from '../../utils/productUtils'
+import { getAfterPayPrice, formatMoney } from '../../utils/productUtils'
 import { getCartTotalAmount } from '../../utils/cartUtils'
 
 import CouponCode from './CouponCode'
-
 import './CartScreen.css'
 
 const { Title } = Typography;
@@ -27,6 +26,7 @@ const CartScreen = () => {
     const handleRemoveItemFromCart = (productId) => {
         dispatch(removeFromCart(productId))
     }
+    
     return (
         <div>
 
@@ -54,7 +54,7 @@ const CartScreen = () => {
                                     shape="square"
                                     // size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
                                     size={100}
-                                    src={product.images && product.images[1].image.full_size} />
+                                    src={product.images && product.images[0].image_url} />
                             </div>
                             <div className="CartScreen-Product CartScreen-Product-Box2">
                                 <h3>{product.name}</h3>
@@ -62,7 +62,7 @@ const CartScreen = () => {
                                 <p><i>Brought to you by: {product.seller.company_name}</i></p>
                             </div>
                             <div className="CartScreen-Product CartScreen-Product-Box3">
-                                ${getTwoDecimalOfPrice(product.price)} <TagsOutlined />
+                                {formatMoney(product.price)} <TagsOutlined />
                             </div>
                             <div className="CartScreen-Product CartScreen-Product-Box4">
 
@@ -79,12 +79,12 @@ const CartScreen = () => {
                 </Col>
                 <Col xs={24} sm={12} md={8} lg={4}>
                     <p >Total:</p>
-                    <Title level={1}>${totalPrice}</Title>
+                    <Title level={1}>{formatMoney(totalPrice)}</Title>
                     {
                         totalPrice > 0 ?
                         <div>
                             <p>
-                                or 4 payments of ${getAfterPayPrice(totalPrice)} with &nbsp;
+                                or 4 payments of {formatMoney(getAfterPayPrice(totalPrice))} with &nbsp;
                                 <Tag icon={<CheckCircleOutlined />} color="success">
                                     afterPay
                                 </Tag>
