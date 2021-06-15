@@ -1,7 +1,9 @@
 # Shoppingfy
 
 
+![shoppingfy_3](https://user-images.githubusercontent.com/4976722/122075476-02577d80-cdf2-11eb-9d70-fd96a3306858.gif)
 
+![shoppingfy_2](https://user-images.githubusercontent.com/4976722/122075491-05526e00-cdf2-11eb-859b-63887f7043b8.gif)
 
 
 This is a shopping website built with the following technologies
