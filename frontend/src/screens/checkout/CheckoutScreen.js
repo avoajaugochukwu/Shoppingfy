@@ -22,6 +22,7 @@ const CheckoutScreen = () => {
     const { cartItems } = cart
     const totalPrice = getCartTotalAmount(cartItems)
 
+    console.log(cartItems)
     return (
         <>
 
@@ -53,7 +54,7 @@ const CheckoutScreen = () => {
                                     shape="square"
                                     // size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
                                     size={64}
-                                    src={product.images && product.images[1].image.full_size} />
+                                    src={product.images && product.images[0].image_url} />
                             </div>
                             <div className="CheckOutScreen-Product CheckOutScreen-Product-Box2">
                                 <h4>{product.name}</h4>
